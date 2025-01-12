@@ -74,9 +74,10 @@ export const withActivation = (WrappedComponent) => {
   if (isFunction(WrappedComponent.prototype.componentDidMount)) {
     WrappedComponent.prototype._componentDidMount =
       WrappedComponent.prototype.componentDidMount
-    WrappedComponent.prototype.componentDidMount = function componentDidMount() {
-      nextTick(() => WrappedComponent.prototype._componentDidMount.call(this))
-    }
+    WrappedComponent.prototype.componentDidMount =
+      function componentDidMount() {
+        nextTick(() => WrappedComponent.prototype._componentDidMount.call(this))
+      }
   }
 
   if (isFunction(forwardRef)) {

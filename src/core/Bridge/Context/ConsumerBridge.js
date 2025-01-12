@@ -1,15 +1,10 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React, {
   PureComponent,
-  useContext,
-  useRef,
-  useEffect,
-  useState,
 } from 'react'
-import { run, get, nextTick, isUndefined, isFunction, isExist } from 'szfe-tools'
+import { isExist } from 'szfe-tools'
 
 import ConsumerWrapper from './ConsumerWrapper'
-import { fixedContext, eventBus, updateListenerCache } from './fixContext'
+import { fixedContext } from './fixContext'
 
 const fixedContextSnapshot = {}
 
@@ -20,7 +15,9 @@ class RecursiveConsumerBridge extends PureComponent {
     const { id } = props
 
     if (!fixedContextSnapshot[id]) {
-      fixedContextSnapshot[id] = [...fixedContext].filter(ctx => isExist(ctx.Consumer))
+      fixedContextSnapshot[id] = [...fixedContext].filter((ctx) =>
+        isExist(ctx.Consumer)
+      )
     }
   }
 

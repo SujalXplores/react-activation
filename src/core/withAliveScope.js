@@ -8,14 +8,8 @@ import NodeKey from './NodeKey'
 import { AliveScopeConsumer, useScopeContext } from './context'
 
 function controllerCherryPick(controller) {
-  const {
-    drop,
-    dropScope,
-    refresh,
-    refreshScope,
-    clear,
-    getCachingNodes,
-  } = controller
+  const { drop, dropScope, refresh, refreshScope, clear, getCachingNodes } =
+    controller
   return { drop, dropScope, refresh, refreshScope, clear, getCachingNodes }
 }
 
