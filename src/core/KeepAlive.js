@@ -248,7 +248,7 @@ class KeepAlive extends Component {
     return (
       <div
         {...wrapperProps}
-        key='keep-alive-placeholder'
+        key="keep-alive-placeholder"
         nodeKeyIgnore
         className={`ka-wrapper ${wrapperProps.className || ''}`}
         ref={(node) => {
@@ -265,13 +265,13 @@ function SSRKeepAlive({ children }) {
   return (
     <div
       {...wrapperProps}
-      key='keep-alive-placeholder'
+      key="keep-alive-placeholder"
       nodeKeyIgnore
       className={`ka-wrapper ${wrapperProps.className || ''}`}
     >
       <div
         {...contentProps}
-        key='keeper-container'
+        key="keeper-container"
         nodeKeyIgnore
         className={`ka-content ${contentProps.className || ''}`}
       >
